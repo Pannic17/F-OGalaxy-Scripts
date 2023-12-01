@@ -6,6 +6,8 @@ from super_image import EdsrModel, ImageLoader, DrlnModel
 from PIL import Image
 import requests
 
+start = time.time()
+
 url = 'https://paperswithcode.com/media/datasets/Set5-0000002728-07a9793f_zA3bDjj.jpg'
 # image = Image.open(requests.get(url, stream=True).raw)
 
@@ -22,6 +24,8 @@ upscaled_image = Image.fromarray(np.uint8(ImageLoader._process_image_to_save(pre
 id = str(int(time.time()))
 upscaled_image.save("output/upscale/cv_2x_{}.png".format(id))
 # ImageLoader.save_compare(inputs, preds, './scaled_2x_compare.png')
+
+print("Time taken: ", time.time() - start)
 plt.figure(figsize=(12, 6))
 plt.subplot(1, 2, 1)
 plt.imshow(image)

@@ -6,6 +6,7 @@ from RealESRGAN import RealESRGAN
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+start = time.time()
 model = RealESRGAN(device, scale=4)
 model.load_weights('models/RealESRGAN_x4plus.pth', download=True)
 
@@ -16,6 +17,7 @@ sr_image = model.predict(image)
 
 id = str(int(time.time()))
 sr_image.save("output/upscale/gan_4x_{}.png".format(id))
+print("Time taken: ", time.time() - start)
 
 
 def gan_upscale_4x(image_path: str, output_path: str, default_path=True):
