@@ -10,6 +10,9 @@ Jiangyun Pan, 22044483
 - opencv
 - matplotlib
 ## Overview
+
+### Real-World Scene
+
 The project is structured into two distinct sections: the Real-World Scene and the Virtual World Game. In the Real-World Scene, a wooden frame is constructed to create a stand that forms an interactive playground. Within this space, participants can interact with lenses that are placed on an acrylic board. This hands-on engagement is further enhanced by the option to place a white acrylic board on top. By pressing a key on a controller or computer, users can initiate complex calculations that occur behind the scenes, seamlessly blending physical interaction with digital technology.   
 
 Simultaneously, a server operates a pipeline that processes and analyzes images captured by an infrared camera positioned underneath. The processed image is then projected onto the white acrylic board. Approximately 30 seconds later, the visual display on the board adjusts, reflecting changes in the game scene, thereby creating a dynamic and immersive gaming experience.
@@ -24,6 +27,6 @@ Finally, the k-Means algorithm is once again used, this time to cluster the domi
 
 ### Unreal Engine
 
-During the operation, Unreal Engine is programmed to initiate a 30-second wait period, followed by a polling process every second. This adjustment was made based on the observation that the entire computational and generation process typically takes between 32 to 40 seconds.
-
-Once the calculations and image generations are complete, procedural generation commences within Unreal Engine. This phase intricately combines the use of both Blueprint and C++ coding. The process involves the creation of game objects, assignment of animations, and setting of shader parameters to achieve specific visual effects. Key elements include a blackhole, which is composed of a center, a ring, and a shader that produces a lens effect. Additionally, the star in the game features a dynamic surface shader and a Niagara particle system, which together create a captivating plasma effect. The planets are also intricately designed, boasting up to 13 surface textures inspired by the solar system, and each planet is accentuated with a unique shader ring, further enhancing the visual diversity and depth of the game environment.
+During the operation, Unreal Engine waits for 30 seconds before polling every second, as the computational process averages 32-40 seconds. 
+Once the calculations and image generations are complete, procedural generation commences within Unreal Engine. This phase intricately combines the use of both Blueprint and C++ coding. 
+The process involves the creation of game objects, assignment of animations, and setting of shader parameters to achieve specific visual effects. Key elements include a blackhole, which is composed of a center, a ring, and a shader that produces a lens effect. Additionally, the star in the game features a dynamic surface shader and a Niagara particle system, which together create a captivating plasma effect. The planets are also intricately designed, boasting up to 13 surface textures inspired by the solar system, and each planet is accentuated with a unique shader ring, further enhancing the visual diversity and depth of the game environment.
